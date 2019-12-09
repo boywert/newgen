@@ -92,7 +92,7 @@ void read_pos(char *fname) {
   printf("test 1\n");
   MPI_Bcast(&Nglass, 1, MPI_INT, 0, MPI_COMM_WORLD);
   MPI_Bcast(&header1, sizeof(header1), MPI_BYTE, 0, MPI_COMM_WORLD);
-
+  printf("test 2\n");
   if(ThisTask != 0)
     {
       pos = (float *) malloc(sizeof(float) * Nglass * 3);
@@ -104,12 +104,12 @@ void read_pos(char *fname) {
 	  FatalError(112);
 	}
     }
-
+  printf("test 3\n");
   MPI_Bcast(&pos[0], sizeof(float) * Nglass * 3, MPI_BYTE, 0, MPI_COMM_WORLD);
 
 
   npart_Task = malloc(sizeof(int) * NTask);
-
+  printf("test 4\n");
   for(i = 0; i < NTask; i++)
     npart_Task[i] = 0;
 
@@ -133,7 +133,7 @@ void read_pos(char *fname) {
 		}
 	      //}
   //}
-
+  printf("test 5\n");
   TotNumPart = 0;		/* note: This is a 64 bit integer */
   NTaskWithN = 0;
 
@@ -146,7 +146,7 @@ void read_pos(char *fname) {
 	NTaskWithN++;
     }
 
-
+  printf("test 6\n");
   if(ThisTask == 0)
     {
       for(i = 0; i < NTask; i++)
@@ -157,7 +157,7 @@ void read_pos(char *fname) {
 
       fflush(stdout);
     }
-
+  printf("test 7\n");
   free(npart_Task);
 
 
@@ -209,7 +209,7 @@ void read_pos(char *fname) {
     IDStart++;
   }
 
-
+  printf("test 8\n");
 
   if(count != NumPart) {
     printf("fatal mismatch (%d %d) on Task %d\n", count, NumPart, ThisTask);
