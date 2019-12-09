@@ -1,4 +1,4 @@
-
+i
 #include <gsl/gsl_rng.h>
 
 double GrowthFactor(double astart, double aend);
@@ -42,7 +42,7 @@ int    compare_logk(const void *a, const void *b);
 void  write_particle_data(void);
 void  read_parameterfile(char *fname);
 void  read_glass(char *fname);
-
+void  read_pos(char *fname);
 
 double tk_eh(double k);
 
