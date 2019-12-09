@@ -112,7 +112,7 @@ void read_pos(char *fname) {
   printf("test 4\n");
   for(i = 0; i < NTask; i++)
     npart_Task[i] = 0;
-
+  printf("test 4.5\n");
 
   //for(i = 0; i < TileFac; i++)
   //for(j = 0; j < TileFac; j++)
@@ -121,17 +121,16 @@ void read_pos(char *fname) {
   //for(type = 0, n = 0; type < 6; type++)
   //{
   //for(m = 0; m < header1.npartTotal[type]; m++, n++)
-  for(m = 0; m < Nglass; m++, n++)
-		{
-		  x = pos[3 * m]; // / header1.BoxSize * (Box / TileFac) + i * (Box / TileFac);
+  for(m = 0; m < Nglass; m++, n++) {
+    x = pos[3 * m]; // / header1.BoxSize * (Box / TileFac) + i * (Box / TileFac);
+    
+    slab = x / Box * Nmesh;
+    if(slab >= Nmesh)
+      slab = Nmesh - 1;
 
-		  slab = x / Box * Nmesh;
-		  if(slab >= Nmesh)
-		    slab = Nmesh - 1;
-
-		  npart_Task[Slab_to_task[slab]] += 1;
-		}
-	      //}
+    npart_Task[Slab_to_task[slab]] += 1;
+  }
+  //}
   //}
   printf("test 5\n");
   TotNumPart = 0;		/* note: This is a 64 bit integer */
