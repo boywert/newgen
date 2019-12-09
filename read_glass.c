@@ -66,7 +66,7 @@ void read_pos(char *fname) {
 	      Nglass = 256 * 256 * 256;
 	      printf("\nNglass= %d\n\n", Nglass);
 	      pos = (float *) malloc(sizeof(float) * Nglass * 3);
-
+	      
 	      if(!(pos))
 		{
 		  printf("failed to allocate %g Mbyte on Task %d for glass file\n",
@@ -89,7 +89,7 @@ void read_pos(char *fname) {
 	  fclose(fd);
 	}
     }
-
+  printf("test 1\n");
   MPI_Bcast(&Nglass, 1, MPI_INT, 0, MPI_COMM_WORLD);
   MPI_Bcast(&header1, sizeof(header1), MPI_BYTE, 0, MPI_COMM_WORLD);
 
