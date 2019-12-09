@@ -336,7 +336,7 @@ void displacement_fields(void)
 	      Velq[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 +
 	      Velq[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 +
 	      Velq[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8;
-	    vel / = 1. + DeltaField[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f1 +
+	    vel /= 1. + DeltaField[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f1 +
 	      DeltaField[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f2 +
 	      DeltaField[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f3 +
 	      DeltaField[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f4 +
