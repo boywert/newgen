@@ -217,6 +217,7 @@ void read_pos(char *fname) {
   }
   
   free(pos);
+  printf("finish reading\n");
 }
 
 void read_glass(char *fname)
