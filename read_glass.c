@@ -123,7 +123,7 @@ void read_pos(char *fname) {
   //for(m = 0; m < header1.npartTotal[type]; m++, n++)
   for(m = 0; m < Nglass; m++, n++)
 		{
-		  x = pos[3 * n]; // / header1.BoxSize * (Box / TileFac) + i * (Box / TileFac);
+		  x = pos[3 * m]; // / header1.BoxSize * (Box / TileFac) + i * (Box / TileFac);
 
 		  slab = x / Box * Nmesh;
 		  if(slab >= Nmesh)
