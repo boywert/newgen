@@ -102,20 +102,6 @@ void displacement_fields(void)
   printf("fac = %g Box = %g\n", fac, Box);
   maxdisp = 0;
 
-  FILE *fp;
-  double *read_tmp;
-  fp = fopen(FileWithDelta, "rb");
-  read_tmp = (double *) malloc( (Nmesh*Nmesh*Nmesh) * sizeof(double));
-  oneplusdelta = (double *) malloc( (Nmesh*Nmesh*Nmesh) * sizeof(double));
-  fseek(fp, (0)*sizeof(double), SEEK_SET);
-  fread(read_tmp, Nmesh * Nmesh * Nmesh, sizeof(double), fp);
-  fclose(fp);
-  
-  for (i = 0; i < Nmesh; ++i)
-    for (j = 0; j < Nmesh; ++j)
-      for (k = 0; k < Nmesh; ++k)
-	oneplusdelta[(i*Nmesh + j) * (2*(Nmesh/2+1)) + k] = 1. + read_tmp[((i)*Nmesh + j) * Nmesh + k];
-  
   for(axes = 0; axes < 3; axes++)
     {
       if(ThisTask == 0)
