@@ -182,15 +182,15 @@ void read_pos(char *fname) {
   //for(type = 0, n = 0; type < 6; type++)
   //  {
   for(m = 0; m < Nglass; m++, n++){
-    x = pos[3 * n];
+    x = pos[3 * m];
     
     slab = x / Box * Nmesh;
     if(slab >= Nmesh)
       slab = Nmesh - 1;
     
     if(Slab_to_task[slab] == ThisTask) {
-      y = pos[3 * n + 1];
-      z = pos[3 * n + 2];
+      y = pos[3 * m + 1];
+      z = pos[3 * m + 2];
       
       P[count].Pos[0] = x;
       P[count].Pos[1] = y;
