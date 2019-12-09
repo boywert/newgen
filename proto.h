@@ -1,4 +1,3 @@
-i
 #include <gsl/gsl_rng.h>
 
 double GrowthFactor(double astart, double aend);
