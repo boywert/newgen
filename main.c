@@ -336,14 +336,14 @@ void displacement_fields(void)
 	      Velq[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 +
 	      Velq[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 +
 	      Velq[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8;
-	    vel /= 1. + DeltaField[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f1 +
-	      DeltaField[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f2 +
-	      DeltaField[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f3 +
-	      DeltaField[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f4 +
-	      DeltaField[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f5 +
-	      DeltaField[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 +
-	      DeltaField[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 +
-	      DeltaField[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8;
+	    vel /= 1. + tmp1[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f1 +
+	      tmp1[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f2 +
+	      tmp1[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f3 +
+	      tmp1[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f4 +
+	      tmp1[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f5 +
+	      tmp1[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 +
+	      tmp1[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 +
+	      tmp1[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8;
 
 
 	    P[n].Vel[axes] = vel;
