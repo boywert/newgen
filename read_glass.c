@@ -128,8 +128,9 @@ void read_pos(char *fname) {
     if(slab >= Nmesh)
       slab = Nmesh - 1;
 
-    npart_Task[Slab_to_task[slab]] += 1;
+    // npart_Task[Slab_to_task[slab]] += 1;
   }
+  exit(0);
   //}
   //}
   printf("test 5\n");
