@@ -130,7 +130,7 @@ void read_pos(char *fname) {
 
     // npart_Task[Slab_to_task[slab]] += 1;
   }
-  exit(0);
+
   //}
   //}
   printf("test 5\n");
@@ -145,7 +145,7 @@ void read_pos(char *fname) {
       if(npart_Task[i] > 0)
 	NTaskWithN++;
     }
-
+  
   printf("test 6\n");
   if(ThisTask == 0)
     {
