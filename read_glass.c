@@ -55,15 +55,16 @@ void read_pos(char *fname) {
 	  //for(k = 0; k < 6; k++)
 	  //nlocal += header1.npart[k];
 	  nlocal = 256*256*256;
+	  Nglass = 256 * 256 * 256;
 	  printf("reading '%s' with %d particles\n", fname, nlocal);
 
 	  if(num == 0)
 	    {
-	      Nglass = 0;
+	      //Nglass = 0;
 
 	      //for(k = 0; k < 6; k++)
 	      //	Nglass += header1.npartTotal[k];
-	      Nglass = 256 * 256 * 256;
+
 	      printf("\nNglass= %d\n\n", Nglass);
 	      pos = (float *) malloc(sizeof(float) * Nglass * 3);
 	      
