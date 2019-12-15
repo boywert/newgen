@@ -11,9 +11,8 @@
 void read_pos(char *fname) {
   int i, j, k, n, m, slab, count, type;
   unsigned int dummy, dummy2;
-  double *pos = 0;
-  double x;
-  float  y, z;
+  float *pos = 0;
+  float x, y, z;
   FILE *fd = 0;
   size_t bytes;
   int *npart_Task;
@@ -67,7 +66,7 @@ void read_pos(char *fname) {
 	      //	Nglass += header1.npartTotal[k];
 
 	      printf("\nNglass= %d\n\n", Nglass);
-	      pos = (double *) malloc(sizeof(double) * Nglass * 3);
+	      pos = (float *) malloc(sizeof(float) * Nglass * 3);
 	      
 	      if(!(pos))
 		{
@@ -78,7 +77,7 @@ void read_pos(char *fname) {
 	    }
 
 	  //SKIP;
-	  my_fread(&pos[3 * skip], sizeof(double), 3 * nlocal, fd);
+	  my_fread(&pos[3 * skip], sizeof(float), 3 * nlocal, fd);
 	  //SKIP2;
 
 	  //if(dummy != sizeof(float) * 3 * nlocal || dummy2 != sizeof(float) * 3 * nlocal)
@@ -97,17 +96,17 @@ void read_pos(char *fname) {
   printf("test 2\n");
   if(ThisTask != 0)
     {
-      pos = (double *) malloc(sizeof(double) * Nglass * 3);
+      pos = (float *) malloc(sizeof(float) * Nglass * 3);
 
       if(!(pos))
 	{
 	  printf("failed to allocate %g Mbyte on Task %d for glass file\n",
-		 sizeof(double) * Nglass * 3.0 / (1024.0 * 1024.0), ThisTask);
+		 sizeof(float) * Nglass * 3.0 / (1024.0 * 1024.0), ThisTask);
 	  FatalError(112);
 	}
     }
   printf("test 3\n");
-  MPI_Bcast(&pos[0], sizeof(double) * Nglass * 3, MPI_BYTE, 0, MPI_COMM_WORLD);
+  MPI_Bcast(&pos[0], sizeof(float) * Nglass * 3, MPI_BYTE, 0, MPI_COMM_WORLD);
 
 
   npart_Task = malloc(sizeof(int) * NTask);
@@ -125,7 +124,7 @@ void read_pos(char *fname) {
   //for(m = 0; m < header1.npartTotal[type]; m++, n++)
   for(m = 0; m < Nglass; m++, n++) {
     x = pos[3 * m]; // / header1.BoxSize * (Box / TileFac) + i * (Box / TileFac);
-    //printf("p = %lf x = %f m = %d\n",pos[3*m],x,m);
+    //printf("p = %lf x = %f m = %d\n",pos[]x,m);
     slab = x / Box * Nmesh;
     if(slab >= Nmesh)
       slab = Nmesh - 1;
