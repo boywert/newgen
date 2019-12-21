@@ -128,7 +128,7 @@ void read_pos(char *fname) {
     slab = x / Box * Nmesh;
     if(slab >= Nmesh)
       slab = Nmesh - 1;
-    printf("%d %d %d\n",slab, Slab_to_task[slab], npart_Task[Slab_to_task[slab]]);
+    //printf("%d %d %d\n",slab, Slab_to_task[slab], npart_Task[Slab_to_task[slab]]);
     npart_Task[Slab_to_task[slab]] += 1;
   }
 
