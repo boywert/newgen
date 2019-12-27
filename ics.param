@@ -14,7 +14,7 @@ Nsample          256       % sets the maximum k that the code uses,
                            % total number of particles
  
 
-Box              8.0  % Periodic box size of simulation
+Box              1.0  % Periodic box size of simulation
 
 FileBase         ics                 % Base-filename of output files
 OutputDir        test_z              % Directory for output
@@ -32,7 +32,7 @@ OmegaLambda      0.6911       % Cosmological constant (at z=0)
 OmegaBaryon      0.0       % Baryon density        (at z=0)
 HubbleParam      0.6766       % Hubble paramater (may be used for power spec parameterization)
 
-Redshift         1e12        % Starting redshift
+Redshift         2.73774e12        % Starting redshift
 
 Sigma8           0.8       % power spectrum normalization
 
@@ -77,7 +77,7 @@ NumFilesWrittenInParallel 1  % limits the number of files that are
                              % written in parallel when outputting
 
 
-UnitLength_in_cm          3.085678e21   % defines length unit of output (in cm/h) 
+UnitLength_in_cm          5.26e17	   % defines length unit of output (in cm/h) 
 UnitMass_in_g             1.989e43      % defines mass unit of output (in g/cm)
 UnitVelocity_in_cm_per_s  1e5           % defines velocity unit of output (in cm/sec)
 
