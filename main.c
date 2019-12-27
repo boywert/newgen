@@ -347,7 +347,7 @@ void displacement_fields(void)
 
 
 	    P[n].Vel[axes] = vel;
-	    //printf("p:%d d:%d >>> %lg\n",n,axes,vel*sqrt(InitTime));
+	    printf("p:%d d:%d >>> %lg\n",n,axes,vel*sqrt(InitTime));
 	    
 	    //P[n].Disp[axes] = dis;
 	    
