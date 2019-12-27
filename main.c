@@ -98,7 +98,7 @@ void displacement_fields(void)
     printf("InitTime = %g\n", InitTime);
 
   
-  fac = sqrt(InitTime)/UnitVelocity_in_cm_per_s;//x0.00462453873; //pow(1./(2 * PI) , 1.5);
+  fac = sqrt(InitTime) * UnitLength_in_cm / UnitVelocity_in_cm_per_s;//x0.00462453873; //pow(1./(2 * PI) , 1.5);
   printf("fac = %g Box = %g\n", fac, Box);
   maxdisp = 0;
 
