@@ -98,7 +98,7 @@ void displacement_fields(void)
     printf("InitTime = %g\n", InitTime);
 
   
-  fac = sqrt(InitTime) * UnitLength_in_cm / UnitVelocity_in_cm_per_s;//x0.00462453873; //pow(1./(2 * PI) , 1.5);
+  fac = sqrt(InitTime) * UnitLength_in_cm / UnitVelocity_in_cm_per_s;
   printf("fac = %g Box = %g\n", fac, Box);
   maxdisp = 0;
 
@@ -336,14 +336,14 @@ void displacement_fields(void)
 	      Velq[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 +
 	      Velq[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 +
 	      Velq[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8;
-	    vel /= 1. + tmp1[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f1 +
-	      tmp1[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f2 +
-	      tmp1[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f3 +
-	      tmp1[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f4 +
-	      tmp1[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f5 +
-	      tmp1[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 +
-	      tmp1[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 +
-	      tmp1[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8;
+	    /* vel /= 1. + tmp1[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f1 + */
+	    /*   tmp1[(i * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f2 + */
+	    /*   tmp1[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f3 + */
+	    /*   tmp1[(i * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f4 + */
+	    /*   tmp1[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + k] * f5 + */
+	    /*   tmp1[(ii * Nmesh + j) * (2 * (Nmesh / 2 + 1)) + kk] * f6 + */
+	    /*   tmp1[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + k] * f7 + */
+	    /*   tmp1[(ii * Nmesh + jj) * (2 * (Nmesh / 2 + 1)) + kk] * f8; */
 
 
 	    P[n].Vel[axes] = vel;
